@@ -46,43 +46,103 @@ body{
 }
 
 .menu-icon {
-    position: absolute;
-    left: 0;
-    top: 0px;
-    padding: 12px 20px;
+    position: fixed;
     cursor: pointer;
     font-weight: var(--boldfont);
-    font-size: 24px;
+    font-size: 2.5dvh;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
     color: var(--color-white);
-    margin-left: 20px;
+    margin-left: 2dvw;
+
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 3;
 }
 
 #menu {
-    position: absolute;
-    top: 100 dvh;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 300px; /* or your preferred width */
-    max-width: 80vw;
-    height: 100vh;
-    background: var(--color-black);
-    overflow: hidden;
+    padding-top: 6dvh; /* Adjusted for the header height */
+    width: 300px;
+    height: 100dvh;
+    background: red;
+    overflow-y: auto; /* Enable vertical scrolling */
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 2;
     box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+
+    
 }
 
 .menu-btn:checked ~ #menu {
     transform: translateX(0);
 }
+ul.menu {
+    padding: 0;
+    margin: 2dvw;;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    
+}
+
+.menu li {
+    margin: 0 0 1.5dvh 0;
+}
+
+.menu a {
+    text-decoration: none;
+    font-style: normal;
+    line-height: normal;
+    font-size: 2.5dvh;
+    font-weight: 400;
+    display: block;
+    
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+    border: none;
+
+}
 
 #About {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    background: purple;
+    color: var(--color-white);
+    z-index: 10;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+   
 }
 
 #About.active {
-    display: block;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#About h1 {
+    font-size: 2.5dvh; /* or try 2rem for consistency */
+    
+}
+
+#About p {
+    font-size: 1.2dvw; /* or 1rem */
+    margin: 0;
 }
 
 #menu-btn.menu-btn{
