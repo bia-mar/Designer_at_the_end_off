@@ -71,5 +71,3 @@ resizer.addEventListener('mousedown', function (e) {
   window.addEventListener('mousemove', onMouseMove);
   window.addEventListener('mouseup', onMouseUp);
 });
-
-
