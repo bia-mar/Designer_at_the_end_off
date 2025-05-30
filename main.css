@@ -1,0 +1,150 @@
+
+
+:root {
+    --color-black:black;
+    --color-white:white;
+    --color-hover:rgba(255, 255, 255, 0.2);
+    
+
+    --regularfont:400;
+    --boldfont:700;
+
+    --size-small:20px;
+    --size-verybig:36px;
+    --size-title:32px;
+    --size-sub-title:28;
+
+    --col100: 100%;
+    --col66: 66.66%;
+    --col50: 50%;
+    --col33: 33.33%;   
+}
+
+body{
+    background-color: var(--color-black);
+    margin: 0;
+    padding: 0;
+    font-family: "DotGothic16", sans-serif;
+    color: var(--color-white);
+
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+/*Designer at the end of sec-----------------------<*/
+
+
+#header {
+    position: relative;
+    width: 100%;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: var(--boldfont);
+    font-size: 24px;
+    color: var(--color-white);
+    margin-left: 20px;
+    z-index: 3;
+}
+
+#menu {
+    position: absolute;
+    top: 100 dvh;
+    left: 0;
+    width: 300px; /* or your preferred width */
+    max-width: 80vw;
+    height: 100vh;
+    background: var(--color-black);
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+.menu-btn:checked ~ #menu {
+    transform: translateX(0);
+}
+
+#About {
+    display: none;
+}
+
+#About.active {
+    display: block;
+}
+
+#menu-btn.menu-btn{
+    display: none; /* Hide the checkbox */
+}
+
+/* #topper  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3
+} */
+
+/*FAZER RESIZABLE -------------------------------------------*/
+* { /*TODO: WHAT DOES THIS DO??*/
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#background-container {
+    position: absolute;
+    top: 0%;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.box {
+    overflow: auto;
+    padding: 16px;
+    min-width: 50px;
+    transition: flex 0.2s;
+}
+
+#sub-menu.hidden {
+    display: none; /* completely hidden */
+}
+
+#sub-menu {
+    flex: 0 0 50%; /* default width when visible */
+}
+
+#canvas-container {
+    flex: 1; /* fill remaining space */
+}
+
+.resizer {
+    width: 1px;
+    height: 100%;
+    background: var(--color-white);
+    cursor: col-resize;
+    user-select: none;
+}
+
+.resizer.hidden {
+    display: none;
+}
