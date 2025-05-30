@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         aboutSection.classList.toggle('active');
     });
 
-    const menuLinks = document.querySelectorAll('.menu a');
+    const menuLinks = document.querySelectorAll('.menu-list a');
     const subMenu = document.getElementById('sub-menu');
     const resizer = document.getElementById('resizer');
     let lastActiveLink = null;
