@@ -12,6 +12,12 @@
     "synopsis": "lorem ipsum..."
   },
   {
+    "label": "COMMUNITY",
+    "poster": "./posters/community.png",
+    "content": "./content/image1.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
     "label": "COMPOSITION",
     "poster": "./posters/composition.png",
     "content": "./content/image1.png",
@@ -111,6 +117,13 @@
       "./content/offline/offline_Page_32.png",
       "./content/offline/offline_Page_33.png"
     ]
+  },
+
+  {
+    "label": "SELF-EXPRESSION",
+    "poster": "./posters/self-expression.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
   },
 
   {
