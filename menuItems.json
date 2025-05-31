@@ -1,0 +1,149 @@
+[
+  {
+    "label": "BONDS",
+    "poster": "./posters/bonds.png",
+    "content": "./content/bonds.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "CLIFF",
+    "poster": "./posters/cliff.png",
+    "content": "./content/cliff.jpg",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "COMPOSITION",
+    "poster": "./posters/composition.png",
+    "content": "./content/image1.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "DREAM CAREER",
+    "poster": "./posters/dream-career.png",
+    "content": "./content/image6.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "EGO",
+    "poster": "./posters/ego.jpg",
+    "content": "./content/image4.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "THE END",
+    "poster": "./posters/end.png",
+    "content": "./content/image9.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "IDENTITY",
+    "poster": "./posters/identity.jpg",
+    "content": "./content/image5.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "IMAGES",
+    "poster": "./posters/images.png",
+    "content": "./content/image10.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "INDIVIDUALITY",
+    "poster": "./posters/individuality.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "MATTER",
+    "poster": "./posters/matter.png",
+    "content": "./content/image8.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "NERVER ENDING PROJECTS",
+    "poster": "./posters/never-ending.png",
+    "content": "./content/image8.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "NOVELTY",
+    "poster": "./posters/novelty.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  
+  {
+    "label": "OFFLINE",
+    "poster": "./posters/offline.png",
+    "synopsis": "Design is no longer a tool of representation, but a system of translation. In a world where boundaries blur between the digital and the physical, design mediates connection, not form and so this project explores the designer as interface, between minds, machines, and a shared memory.",
+    "content": [
+      "./content/offline/offline_Page_01.png",
+      "./content/offline/offline_Page_02.png",
+      "./content/offline/offline_Page_03.png",
+      "./content/offline/offline_Page_04.png",
+      "./content/offline/offline_Page_05.png",
+      "./content/offline/offline_Page_06.png",
+      "./content/offline/offline_Page_07.png",
+      "./content/offline/offline_Page_08.png",
+      "./content/offline/offline_Page_09.png",
+      "./content/offline/offline_Page_10.png",
+      "./content/offline/offline_Page_11.png",
+      "./content/offline/offline_Page_12.png",
+      "./content/offline/offline_Page_13.png",
+      "./content/offline/offline_Page_14.png",
+      "./content/offline/offline_Page_15.png",
+      "./content/offline/offline_Page_16.png",
+      "./content/offline/offline_Page_17.png",
+      "./content/offline/offline_Page_18.png",
+      "./content/offline/offline_Page_19.png",
+      "./content/offline/offline_Page_20.png",
+      "./content/offline/offline_Page_21.png",
+      "./content/offline/offline_Page_22.png",
+      "./content/offline/offline_Page_23.png",
+      "./content/offline/offline_Page_24.png",
+      "./content/offline/offline_Page_25.png",
+      "./content/offline/offline_Page_26.png",
+      "./content/offline/offline_Page_27.png",
+      "./content/offline/offline_Page_28.png",
+      "./content/offline/offline_Page_29.png",
+      "./content/offline/offline_Page_30.png",
+      "./content/offline/offline_Page_31.png",
+      "./content/offline/offline_Page_32.png",
+      "./content/offline/offline_Page_33.png"
+    ]
+  },
+
+  {
+    "label": "STILLNESS",
+    "poster": "./posters/stillness.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "SURVIVAL",
+    "poster": "./posters/survival.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "SYMBIOSIS",
+    "poster": "./posters/symbiosis.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "TRICKERY",
+    "poster": "./posters/trickery.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  },
+  {
+    "label": "UNCIVILIZED",
+    "poster": "./posters/uncivilized.png",
+    "content": "./content/image7.png",
+    "synopsis": "lorem ipsum..."
+  }
+  
+  
+  
+]
