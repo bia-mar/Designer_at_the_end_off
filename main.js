@@ -1,8 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const aboutBtn = document.getElementById('btn-About');
-    const aboutSection = document.getElementById('About');
-    aboutBtn.addEventListener('click', function() {
-        aboutSection.classList.toggle('active');
+    const aboutBtn = document.getElementById('about-button');
+    const aboutSection = document.getElementById('about');
+    const menuToggle = document.getElementById('title');
+    const menu = document.getElementById('menu');
+
+    if (aboutBtn && aboutSection) {
+        aboutBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent document click handler
+            aboutSection.classList.toggle('active');
+        });
+    }
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent document click handler
+            menu.classList.toggle('active');
+        });
+    }
+
+    document.addEventListener('click', function(event) {
+        // If click is outside menu and about, close them
+        if (
+            menu && menu.classList.contains('active') &&
+            !menu.contains(event.target) &&
+            event.target !== menuToggle
+        ) {
+            menu.classList.remove('active');
+        }
+        if (
+            aboutSection && aboutSection.classList.contains('active') &&
+            !aboutSection.contains(event.target) &&
+            event.target !== aboutBtn
+        ) {
+            aboutSection.classList.remove('active');
+        }
     });
 
     const menuLinks = document.querySelectorAll('.menu-list a');
