@@ -46,6 +46,11 @@ body{
     flex-direction: column; */
 }
 
+#canvas-container {
+    padding: 0;
+    margin: 0;
+}
+
 
 
 /*Designer at the end of sec-----------------------<*/
@@ -100,9 +105,9 @@ body{
     transform: translateX(-100%);
     transform-origin: left;
     pointer-events: none;
-    min-width: 270px;
-    padding-top: 60px; /* Adjusted for the header height */
-    padding-bottom: 15px;
+    min-width: 300px;
+    padding-top: 75px; /* Adjusted for the header height */
+    padding-bottom: 18px;
     box-sizing: border-box;
     border-right: 1px solid var(--color-white);
 }
@@ -121,8 +126,13 @@ ul.menu-list,
     display: flex;
     flex-direction: column;
     list-style: none;
-    padding-left: 15px; /* Adjusted for the header height */
-    padding-right: 15px; /* Adjusted for the header height */
+    padding-left: 18px; /* Adjusted for the header height */
+    padding-right: 18px; /* Adjusted for the header height */
+}
+
+#about h1,
+#about p {
+    width: 100%;
 }
 
 .menu-list li {
@@ -143,6 +153,15 @@ ul.menu-list,
 
 }
 
+.menu-list a::before {
+    content: "";
+    transition: content 0.2s;
+}
+
+.menu-list a:hover::before {
+    content: "> ";
+}
+
 #about {
     z-index: 2;
     display: flex;
@@ -150,7 +169,6 @@ ul.menu-list,
     position: fixed;
     top: 0;
     right: 0;
-    width: auto;
     background: var(--color-black);
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0,0,0,0.3);
@@ -160,9 +178,9 @@ ul.menu-list,
     transform-origin: right;
     pointer-events: none;
     height: 100%;
-    min-width: 270px;
-    padding-top: 60px;
-    padding-bottom: 15px;
+    width: 300px;
+    padding-top: 75px;
+    padding-bottom: 18px;
     box-sizing: border-box;
     border-left: 1px solid var(--color-white);
 }
@@ -219,9 +237,10 @@ html, body {
 
 .box {
     overflow: auto;
-    padding: 16px;
+    padding: 18px;
     min-width: 50px;
     transition: flex 0.2s;
+    padding-top: 75px;
 }
 
 #sub-menu.hidden {
@@ -246,4 +265,8 @@ html, body {
 
 .resizer.hidden {
     display: none;
+}
+
+h4 {
+    margin-top: 0;
 }

@@ -6,19 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (aboutBtn && aboutSection) {
         aboutBtn.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent document click handler
+            e.stopPropagation();
             aboutSection.classList.toggle('active');
         });
     }
     if (menuToggle && menu) {
         menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent document click handler
+            e.stopPropagation();
             menu.classList.toggle('active');
         });
     }
 
     document.addEventListener('click', function(event) {
-        // If click is outside menu and about, close them
         if (
             menu && menu.classList.contains('active') &&
             !menu.contains(event.target) &&
@@ -33,30 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         ) {
             aboutSection.classList.remove('active');
         }
-    });
-
-    const menuLinks = document.querySelectorAll('.menu-list a');
-    const subMenu = document.getElementById('sub-menu');
-    const resizer = document.getElementById('resizer');
-    let lastActiveLink = null;
-
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (
-                !subMenu.classList.contains('hidden') &&
-                lastActiveLink === link
-            ) {
-                // Hide if already visible and same link clicked
-                subMenu.classList.add('hidden');
-                resizer.classList.add('hidden');
-                lastActiveLink = null;
-            } else {
-                // Show and set as active
-                subMenu.classList.remove('hidden');
-                resizer.classList.remove('hidden');
-                lastActiveLink = link;
-            }
-        });
     });
 });
 
@@ -112,21 +87,36 @@ fetch('menuItems.json')
     const subMenu = document.getElementById('sub-menu');
     const subMenuText = document.getElementById('sub-menu-text');
     const subMenuContent = document.querySelector('.sub-menu-content');
+    const resizer = document.getElementById('resizer');
+    const menu = document.getElementById('menu');
+    let lastActiveLink = null;
 
     menuLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const label = link.textContent.trim().toUpperCase();
-        // Find the menu item (case-insensitive)
+
+        // If clicking the same link, toggle sub-menu
+        if (lastActiveLink === link) {
+          const isHidden = subMenu.classList.toggle('hidden');
+          resizer.classList.toggle('hidden', isHidden);
+          menu.classList.remove('active');
+          if (isHidden) {
+            lastActiveLink = null;
+            return;
+          }
+        } else {
+          subMenu.classList.remove('hidden');
+          resizer.classList.remove('hidden');
+        }
+
+        // Update content if opening or switching links
         const item = menuItems.find(
-          m => m.label.toUpperCase() === label
+          m => m.label && m.label.toUpperCase() === label
         );
         if (item) {
-          // Update sub-menu-text
           subMenuText.querySelector('h4').textContent = item.label;
           subMenuText.querySelector('p').textContent = item.synopsis || '';
-
-          // Update sub-menu-content
           let contentHtml = '';
           if (item.content) {
             if (Array.isArray(item.content)) {
@@ -141,11 +131,9 @@ fetch('menuItems.json')
             contentHtml += `<img src="${item.poster}" alt="${item.label} poster" style="max-width:100%;margin-top:8px;">`;
           }
           subMenuContent.innerHTML = contentHtml;
-
-          // Show sub-menu
-          subMenu.classList.remove('hidden');
-          document.getElementById('resizer').classList.remove('hidden');
         }
+        lastActiveLink = link;
+        menu.classList.remove('active');
       });
     });
   })
