@@ -22,8 +22,7 @@
         </div> <!-- DESIGNER BUTTON -->
 
         <div id="menu">
-            <ul class="menu-list">
-        
+            <ul id="menu-list" class="menu-list">
                 <li><a>BONDS</a></li>
                 <li><a>CLIFF</a></li>
                 <li><a>COMMUNITY</a></li>
@@ -49,11 +48,27 @@
 
         <div id="about">
             <!-- <h1>ABOUT</h1> -->
-            <p>Designer at the end of é um projeto que parte de uma pergunta tantas vezes colocada e raramente respondida:<br> o que é, afinal, o design?</p> 
-            <br><p>Este foi o ponto de partida para o desenvolvimento de um projeto coletivo que reflete sobre as tensões, classificações e transformações que moldam o design de comunicação contemporâneo. Em vez de o definir, optamos por explorá-lo. Questionamos a multiplicação de categorias, a pressão pela especialização, o mito do designer como tudo (e como nada), e os efeitos de um mercado que romantiza a precariedade sob a máscara do empreendedorismo.</p>
-            <br><p>O website, concebido para apresentar os trabalhos desenvolvidos pelos diferentes grupos de alunos, é também, em si, um projeto, desenvolvido no âmbito do grupo Design at the end of offline. Este grupo investigou o design enquanto antidisciplina: uma prática capaz de, através das tecnologias ubíquas, gerar intersecções, abstrações e materializações do conhecimento em informação pura. Criando uma landing page onde todos os trabalhos se misturam e interligam criando uma ideia de memória coletiva, de super cérebro, que gradualmente vai intersectando as suas componentes, criando algo novo, conjunto.</p> 
-            <br><p>Esta teoria tecno-futurista mostra uma visão positiva do futuro, onde a tecnologia não só nos rodeia, mas nós mesmos fazemos parte dela. Um mundo Open Source, onde não se perde conhecimento, e todos trabalham em conjunto, criando e fazendo design. Essencialmente, projetamos design como a atividade humana do futuro.</p>
-</p>
+            <p>Designer at the end of é um projeto que parte de uma pergunta tantas vezes colocada e raramente
+                respondida:<br> o que é, afinal, o design?</p>
+            <br>
+            <p>Este foi o ponto de partida para o desenvolvimento de um projeto coletivo que reflete sobre as tensões,
+                classificações e transformações que moldam o design de comunicação contemporâneo. Em vez de o definir,
+                optamos por explorá-lo. Questionamos a multiplicação de categorias, a pressão pela especialização, o
+                mito do designer como tudo (e como nada), e os efeitos de um mercado que romantiza a precariedade sob a
+                máscara do empreendedorismo.</p>
+            <br>
+            <p>O website, concebido para apresentar os trabalhos desenvolvidos pelos diferentes grupos de alunos, é
+                também, em si, um projeto, desenvolvido no âmbito do grupo Design at the end of offline. Este grupo
+                investigou o design enquanto antidisciplina: uma prática capaz de, através das tecnologias ubíquas,
+                gerar intersecções, abstrações e materializações do conhecimento em informação pura. Criando uma landing
+                page onde todos os trabalhos se misturam e interligam criando uma ideia de memória coletiva, de super
+                cérebro, que gradualmente vai intersectando as suas componentes, criando algo novo, conjunto.</p>
+            <br>
+            <p>Esta teoria tecno-futurista mostra uma visão positiva do futuro, onde a tecnologia não só nos rodeia, mas
+                nós mesmos fazemos parte dela. Um mundo Open Source, onde não se perde conhecimento, e todos trabalham
+                em conjunto, criando e fazendo design. Essencialmente, projetamos design como a atividade humana do
+                futuro.</p>
+            </p>
         </div>
 
     </div>
@@ -63,7 +78,7 @@
             <div id="sub-menu-text"><!--label and synopsis-->
                 <h4>label </h4>
                 <p>
-                    synopsis    
+                    synopsis
                 </p>
 
             </div>
@@ -74,19 +89,19 @@
         <div class="resizer hidden" id="resizer"></div>
 
         <section class="box" id="canvas-container"> <!--CANVAS-->
-            <div class="canvas-c">
-
-                
-                <h2>canvas</h2>
-                
-                
-                
-            </div>
+            <canvas id="glitchCanvas"></canvas>
+            <canvas id="circleCanvas"></canvas>
         </section>
+        <img id="hoverImage"
+            style="position:absolute; pointer-events:none; display:none; outline:solid 1.5px black; z-index:10;" />
+        <div id="hoverText"
+            style="position:absolute; pointer-events:none; display:none; z-index:11; color:white; background:rgba(0,0,0,0.5); border:none; font-size:20px; font-family:DotGothic16, sans-serif; text-transform:uppercase; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000">
+        </div>
     </div>
 
 
 </body>
 
 <script src="main.js" defer></script>
+
 </html>

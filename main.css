@@ -1,208 +1,204 @@
 :root {
-    --color-black:black;
-    --color-white:white;
-    --color-hover:rgba(255, 255, 255, 0.2);
-    
+  --color-black: black;
+  --color-white: white;
+  --color-hover: rgba(255, 255, 255, 0.2);
 
-    --regularfont:400;
-    --boldfont:700;
+  --regularfont: 400;
+  --boldfont: 700;
 
-    --size-small:20px;
-    --size-verybig:36px;
-    --size-title:32px;
-    --size-sub-title:28;
+  --size-small: 20px;
+  --size-verybig: 36px;
+  --size-title: 32px;
+  --size-sub-title: 28;
 
-    --col100: 100%;
-    --col66: 66.66%;
-    --col50: 50%;
-    --col33: 33.33%;   
+  --col100: 100%;
+  --col66: 66.66%;
+  --col50: 50%;
+  --col33: 33.33%;
 }
 
 * {
-    font-family: "DotGothic16", sans-serif;
-    font-weight: var(--boldfont);
-    font-size: 20px;
-    color: var(--color-white);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  font-family: "DotGothic16", sans-serif;
+  font-weight: var(--boldfont);
+  font-size: 20px;
+  color: var(--color-white);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-    border: none;
-    box-sizing: border-box;
+  border: none;
+  box-sizing: border-box;
 }
 
 button,
 a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-body{
-    background-color: var(--color-black);
-    margin: 0;
-    padding: 0;
-    font-family: "DotGothic16", sans-serif;
-    color: var(--color-white);
+body {
+  background-color: var(--color-black);
+  margin: 0;
+  padding: 0;
+  font-family: "DotGothic16", sans-serif;
+  color: var(--color-white);
 
-
-    /* display: flex;
+  /* display: flex;
     flex-direction: column; */
 }
 
 #canvas-container {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
+
 
 
 
 /*Designer at the end of sec-----------------------<*/
 
-
 #header {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: flex-start;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
 }
 
 #main-buttons {
-    cursor: pointer;
-    font-weight: var(--boldfont);
-    font-size: 20px;
-    color: var(--color-white);
-    z-index: 3;
-    padding-top: 15px; /* Adjusted for the header height */
-    padding-left: 15px; /* Adjusted for the header height */
-    padding-right: 15px; /* Adjusted for the header height */
-    width: 100dvw;
-    display: flex;
-    justify-content: space-between;
+  cursor: pointer;
+  font-weight: var(--boldfont);
+  font-size: 20px;
+  color: var(--color-white);
+  z-index: 3;
+  padding-top: 15px; /* Adjusted for the header height */
+  padding-left: 15px; /* Adjusted for the header height */
+  padding-right: 15px; /* Adjusted for the header height */
+  width: 100dvw;
+  display: flex;
+  justify-content: space-between;
 }
 
 #title,
 #about-button {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-    border: none;
-    background: rgba(0, 0, 0, 0.5);
-    font-weight: var(--boldfont);
-    font-size: 20px;
-    color: var(--color-white);
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: var(--boldfont);
+  font-size: 20px;
+  color: var(--color-white);
 }
 
-#menu { /* TODO: FIX THE HEIGHT ISSUE */
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: auto;
-    background: var(--color-black);
-    overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    z-index: 2;
-    transition: transform 0.4s cubic-bezier(.77,0,.18,1);
-    transform: translateX(-100%);
-    transform-origin: left;
-    pointer-events: none;
-    min-width: 300px;
-    padding-top: 75px; /* Adjusted for the header height */
-    padding-bottom: 18px;
-    box-sizing: border-box;
-    border-right: 1px solid var(--color-white);
+#menu {
+  /* TODO: FIX THE HEIGHT ISSUE */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  background: var(--color-black);
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  transform: translateX(-100%);
+  transform-origin: left;
+  pointer-events: none;
+  min-width: 300px;
+  padding-top: 75px; /* Adjusted for the header height */
+  padding-bottom: 18px;
+  box-sizing: border-box;
+  border-right: 1px solid var(--color-white);
 }
 
 #menu.active {
-    transform: translateX(0);
-    pointer-events: auto;
+  transform: translateX(0);
+  pointer-events: auto;
 }
-
 
 ul.menu-list,
 #about h1,
 #about p {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding-left: 18px; /* Adjusted for the header height */
-    padding-right: 18px; /* Adjusted for the header height */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 18px; /* Adjusted for the header height */
+  padding-right: 18px; /* Adjusted for the header height */
 }
 
 #about h1,
 #about p {
-    width: 100%;
+  width: 100%;
 }
 
 .menu-list li {
-    margin: 0 0 1.5dvh 0;
+  margin: 0 0 1.5dvh 0;
 }
 
 .menu-list a {
-    text-decoration: none;
-    font-style: normal;
-    line-height: normal;
-    font-size: 20px;
-    font-weight: 400;
-    display: block;
-    
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
-    border: none;
+  text-decoration: none;
+  font-style: normal;
+  line-height: normal;
+  font-size: 20px;
+  font-weight: 400;
+  display: block;
 
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  border: none;
 }
 
 .menu-list a::before {
-    content: "";
-    transition: content 0.2s;
+  content: "";
+  transition: content 0.2s;
 }
 
 .menu-list a:hover::before {
-    content: "> ";
+  content: "> ";
 }
 
 #about {
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: var(--color-black);
-    overflow-y: auto;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
-    z-index: 2;
-    transition: transform 0.4s cubic-bezier(.77,0,.18,1);
-    transform: translateX(100%);
-    transform-origin: right;
-    pointer-events: none;
-    height: 100%;
-    width: 300px;
-    padding-top: 75px;
-    padding-bottom: 18px;
-    box-sizing: border-box;
-    border-left: 1px solid var(--color-white);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--color-black);
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  transform: translateX(100%);
+  transform-origin: right;
+  pointer-events: none;
+  height: 100%;
+  width: 300px;
+  padding-top: 75px;
+  padding-bottom: 18px;
+  box-sizing: border-box;
+  border-left: 1px solid var(--color-white);
 }
 
 #about.active {
-    transform: translateX(0);
-    pointer-events: auto;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 #about h1 {
-    font-size: 20px; /* or try 2rem for consistency */
-    
+  font-size: 20px; /* or try 2rem for consistency */
 }
 
 #about p {
-    font-size: 20px; /* or 1rem */
-    margin: 0;
+  font-size: 20px; /* or 1rem */
+  margin: 0;
 }
 
- #menu-btn.menu-btn{
-    display: none; /* Hide the checkbox */
-} 
+#menu-btn.menu-btn {
+  display: none; /* Hide the checkbox */
+}
 
 /* #topper {
     position: absolute;
@@ -215,70 +211,83 @@ ul.menu-list,
 } */
 
 /*FAZER RESIZABLE -------------------------------------------*/
-#background-container * { /*TODO: WHAT DOES THIS DO??*/
-    box-sizing: border-box;
+#background-container * {
+  /*TODO: WHAT DOES THIS DO??*/
+  box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    height: 100dvh;
-    width: 100%;
-    overflow: visible;
+html,
+body {
+  margin: 0;
+  height: 100dvh;
+  width: 100%;
+  overflow: visible;
 }
-
 
 #background-container {
-    position: absolute;
-    top: 0;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden; /* Add this */
-    background-color: red;
+  position: absolute;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Add this */
 }
 
 .box {
-    overflow: auto;
-    /*padding: 18px;*/
-    min-width: 50px;
-    transition: flex 0.2s;
-    /*padding-top: 75px;*/
-    background-color: green;
-    flex-shrink: 0; /* Add this */
+  overflow: auto;
+  /*padding: 18px;*/
+  min-width: 50px;
+  transition: flex 0.2s;
+  /*padding-top: 75px;*/
+  flex-shrink: 0; /* Add this */
 }
 
 #sub-menu.hidden {
-    display: none; /* completely hidden */
+  display: none; /* completely hidden */
 }
 
 #sub-menu {
-    flex: 0 0 50%;
+  z-index: 100;
+  background-color: var(--color-black);
+  overflow-x: hidden;
+  flex: 0 0 50%;
 }
 
 #canvas-container {
-    flex: 1 1 auto; 
-    min-width: 0; 
+  z-index: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+canvas {
+  image-rendering: pixelated;
+  display: block;
+  position: absolute;
+  /* Stack canvases on top of each other */
+  top: 0;
+  left: 0;
 }
 
 .resizer {
-    flex-shrink: 0; 
-    width: 1px;
-    height: 100%;
-    background: var(--color-white);
-    cursor: col-resize;
-    user-select: none;
+  flex-shrink: 0;
+  z-index: 100;
+  width: 6px;
+  height: 100%;
+  background: var(--color-white);
+  cursor: col-resize;
+  user-select: none;
 }
 
 .resizer.hidden {
-    display: none;
+  display: none;
 }
 
 h4 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .canvas-c {
-    background-color: purple;
-    width: 100%;
-    height: 100%;
+  background-color: purple;
+  width: 100%;
+  height: 100%;
 }
