@@ -422,8 +422,8 @@ function loadImagesAndInit() {
     let hovered = false;
 
     imageCenters.forEach((center, index) => {
-      const rectWidth = 100; // Width of the rectangle
-      const rectHeight = 100; // Height of the rectangle
+      const rectWidth = 20; // Width of the rectangle
+      const rectHeight = 20; // Height of the rectangle
       const rectX = center.x - rectWidth / 2;
       const rectY = center.y - rectHeight / 2;
 
