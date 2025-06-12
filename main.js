@@ -127,7 +127,8 @@ fetch('menuItems.json')
         );
         if (item) {
           subMenuText.querySelector('h4').textContent = item.label;
-          subMenuText.querySelector('p').textContent = item.synopsis || '';
+          subMenuText.querySelector('p#synopsis').textContent = item.synopsis || '';
+          subMenuText.querySelector('p#authors').textContent = item.authors || '';
           let contentHtml = '';
           if (item.content) {
             if (Array.isArray(item.content)) {
@@ -289,8 +290,8 @@ function loadImagesAndInit() {
 
     // Draw rectangles
     imageCenters.forEach(center => {
-      const rectWidth = 6; // Width of the rectangle
-      const rectHeight = 6; // Height of the rectangle
+      const rectWidth = 10; // Width of the rectangle
+      const rectHeight = 10; // Height of the rectangle
 
       // Draw larger black rectangle (background)
       circleCtx.fillStyle = 'black'; // Set the fill color to black
@@ -422,8 +423,8 @@ function loadImagesAndInit() {
     let hovered = false;
 
     imageCenters.forEach((center, index) => {
-      const rectWidth = 20; // Width of the rectangle
-      const rectHeight = 20; // Height of the rectangle
+      const rectWidth = 50; // Width of the rectangle
+      const rectHeight = 50; // Height of the rectangle
       const rectX = center.x - rectWidth / 2;
       const rectY = center.y - rectHeight / 2;
 
@@ -502,7 +503,7 @@ function loadImagesAndInit() {
             console.log(`Clicked circle index: ${index}, label: ${menuItemsList[index].label}`);
             // Simulate click on the corresponding submenu <a>
             simulateMenuClickByLabel(menuItemsList[index].label);
-          }else {
+          } else {
             const subMenu = document.getElementById('sub-menu');
             const hoverImage = document.getElementById('hoverImage');
             const hoverText = document.getElementById('hoverText');
@@ -511,7 +512,7 @@ function loadImagesAndInit() {
             if (hoverImage) hoverImage.style.display = 'none';
             if (hoverText) hoverText.style.display = 'none';
           }
-          
+
         };
         // --- end click event ---
       }
@@ -534,6 +535,12 @@ function loadImagesAndInit() {
   });
 }
 
+// Reload only the canvas after 90 seconds (90000 milliseconds)
+setTimeout(function () {
+  if (typeof loadImagesAndInit === 'function') {
+    loadImagesAndInit();
+  }
+}, 90000);
 
 window.addEventListener('resize', function () {
   location.reload();

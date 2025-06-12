@@ -3,81 +3,94 @@
     "label": "BONDS",
     "poster": "./posters/bonds.png",
     "content": "./content/bonds.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "CLIFF",
     "poster": "./posters/cliff.png",
     "content": "./content/cliff.jpg",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "COMMUNITY",
     "poster": "./posters/community.png",
     "content": "./content/image1.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "COMPOSITION",
     "poster": "./posters/composition.png",
     "content": "./content/image1.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "DREAM CAREER",
     "poster": "./posters/dream-career.png",
     "content": "./content/image6.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "EGO",
     "poster": "./posters/ego.jpg",
     "content": "./content/image4.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "THE END",
     "poster": "./posters/end.png",
     "content": "./content/image9.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "IDENTITY",
     "poster": "./posters/identity.jpg",
     "content": "./content/image5.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "IMAGES",
     "poster": "./posters/images.png",
     "content": "./content/image10.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "INDIVIDUALITY",
     "poster": "./posters/individuality.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "MATTER",
     "poster": "./posters/matter.png",
     "content": "./content/image8.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "NERVER ENDING PROJECTS",
     "poster": "./posters/never-ending.png",
     "content": "./content/image8.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "NOVELTY",
     "poster": "./posters/novelty.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
-  
+
   {
     "label": "OFFLINE",
     "poster": "./posters/offline.png",
@@ -116,47 +129,51 @@
       "./content/offline/offline_Page_31.png",
       "./content/offline/offline_Page_32.png",
       "./content/offline/offline_Page_33.png"
-    ]
+    ],
+    "authors": "Ana Mota, Beatriz Marçal, Filipe Silva"
   },
 
   {
     "label": "SELF-EXPRESSION",
     "poster": "./posters/self-expression.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
 
   {
     "label": "STILLNESS",
     "poster": "./posters/stillness.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "SURVIVAL",
     "poster": "./posters/survival.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "SYMBIOSIS",
     "poster": "./posters/symbiosis.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "TRICKERY",
     "poster": "./posters/trickery.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   },
   {
     "label": "UNCIVILIZED",
     "poster": "./posters/uncivilized.png",
     "content": "./content/image7.png",
-    "synopsis": "lorem ipsum..."
+    "synopsis": "lorem ipsum...",
+    "authors": "John Doe, Jane Smith"
   }
-  
-  
-  
 ]
