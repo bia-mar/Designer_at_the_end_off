@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (aboutBtn && aboutSection) {
     aboutBtn.addEventListener('click', function (e) {
       e.stopPropagation();
+      if (menu && !menu.classList.contains('active')) {
+        menu.classList.add('active');
+      }
       aboutSection.classList.toggle('active');
     });
   }
