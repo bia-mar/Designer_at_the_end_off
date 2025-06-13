@@ -14,8 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (aboutBtn && aboutSection) {
     aboutBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      if (menu && !menu.classList.contains('active')) {
-        menu.classList.add('active');
+      // Open the "OFFLINE" submenu directly when About is clicked
+      if (window.menuItemsList) {
+        const offlineItem = window.menuItemsList.find(
+          m => m.label && m.label.toUpperCase() === 'OFFLINE'
+        );
+        if (offlineItem) {
+          simulateMenuClickByLabel('OFFLINE');
+        }
       }
       aboutSection.classList.toggle('active');
     });
