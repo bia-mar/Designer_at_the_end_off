@@ -137,7 +137,6 @@ fetch('menuItems.json')
         if (item) {
           subMenuText.querySelector('h4').textContent = item.label;
           subMenuText.querySelector('p#synopsis').textContent = item.synopsis || '';
-          subMenuText.querySelector('p#authors').textContent = item.authors || '';
           let contentHtml = '';
           if (item.content) {
             if (Array.isArray(item.content)) {
@@ -155,6 +154,7 @@ fetch('menuItems.json')
             contentHtml += `<img src="${item.poster}" alt="${item.label} poster">`;
           }
           subMenuContent.innerHTML = contentHtml;
+          subMenuText.querySelector('p#authors').textContent = item.authors || '';
         }
         lastActiveLink = link;
         menu.classList.remove('active');
@@ -579,7 +579,8 @@ function simulateMenuClickByLabel(label, link) {
   );
   if (item) {
     subMenuText.querySelector('h4').textContent = item.label;
-    subMenuText.querySelector('p').textContent = item.synopsis || '';
+    subMenuText.querySelector('p#synopsis').textContent = item.synopsis || '';
+    subMenuText.querySelector('p#authors').textContent = item.authors || '';
     let contentHtml = '';
     if (item.content) {
       if (Array.isArray(item.content)) {
