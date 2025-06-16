@@ -55,8 +55,10 @@ const resizer = document.getElementById('resizer');
 const leftBox = document.getElementById('sub-menu');
 const rightBox = document.getElementById('canvas-container');
 
+let isResizing = false;
+
 resizer.addEventListener('mousedown', function (e) {
-  e.preventDefault();
+  isResizing = true;
 
   if (leftBox.classList.contains('hidden')) {
     // Unhide and reset widths to 50% each
@@ -87,10 +89,13 @@ resizer.addEventListener('mousedown', function (e) {
   }
 
   function onMouseUp() {
+    // Delay resetting isResizing so the click event is ignored
+    setTimeout(() => {
+      isResizing = false;
+    }, 0);
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('mouseup', onMouseUp);
   }
-
   window.addEventListener('mousemove', onMouseMove);
   window.addEventListener('mouseup', onMouseUp);
 });
@@ -114,6 +119,7 @@ fetch('menuItems.json')
     menuLinks.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
+        e.stopPropagation(); // <-- Add this line!
         const label = link.textContent.trim().toUpperCase();
 
         // If clicking the same link, toggle sub-menu
@@ -517,6 +523,9 @@ function loadImagesAndInit() {
             const hoverImage = document.getElementById('hoverImage');
             const hoverText = document.getElementById('hoverText');
             menu.classList.remove('active');
+            // When hiding the sub-menu:
+            subMenu.classList.add('hidden');
+            resizer.classList.add('hidden');
             if (subMenu) subMenu.classList.add('hidden');
             if (hoverImage) hoverImage.style.display = 'none';
             if (hoverText) hoverText.style.display = 'none';
@@ -597,4 +606,42 @@ function simulateMenuClickByLabel(label, link) {
     subMenuContent.innerHTML = contentHtml;
   }
   menu.classList.remove('active');
+  // If this is called from a click/tap, make sure to stop propagation there as well if needed
 }
+
+// Close panels function
+function handleClosePanels(event) {
+  if (isResizing) return; // Don't close panels if resizing
+  const aboutBtn = document.getElementById('about-button');
+  const aboutSection = document.getElementById('about');
+  const menuToggle = document.getElementById('title');
+  const menu = document.getElementById('menu');
+
+  if (
+    menu && menu.classList.contains('active') &&
+    !menu.contains(event.target) &&
+    event.target !== menuToggle
+  ) {
+    menu.classList.remove('active');
+  }
+  if (
+    aboutSection && aboutSection.classList.contains('active') &&
+    !aboutSection.contains(event.target) &&
+    event.target !== aboutBtn
+  ) {
+    aboutSection.classList.remove('active');
+  }
+  // Add for sub-menu if needed:
+  const subMenu = document.getElementById('sub-menu');
+  if (
+    subMenu && !subMenu.classList.contains('hidden') &&
+    !subMenu.contains(event.target)
+  ) {
+    // When hiding the sub-menu:
+    subMenu.classList.add('hidden');
+    resizer.classList.add('hidden');
+  }
+}
+
+document.addEventListener('click', handleClosePanels);
+document.addEventListener('touchstart', handleClosePanels);

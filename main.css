@@ -98,7 +98,6 @@ body {
 }
 
 #menu {
-  /* TODO: FIX THE HEIGHT ISSUE */
   position: fixed;
   top: 0;
   left: 0;
@@ -353,4 +352,71 @@ h4 {
 
 #synopsis {
   margin-bottom: 10px;
+}
+
+
+@media (max-width: 600px) {
+  /* Your mobile styles here */
+  #menu {
+    width: 100dvw;
+    min-width: 0;
+    border-right: 0px solid var(--color-white);
+    height: 90%;
+    border-bottom: 1px solid var(--color-white);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    transform: translateY(-100%);
+  }
+
+  #menu.active {
+  transform: translateY(0);
+  }
+
+  #about {
+    width: 100dvw;
+    height: calc(30% - 10px); /* Adjusted for the header height */
+    min-width: 0;
+    border-left: 0px solid var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    transform: translateY(-100%);
+  }
+
+  /* #sub-menu {
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  transform: translateY(100%);
+  }
+
+  #sub-menu.active {
+    transform: translateY(0);
+  }
+  
+  #sub-menu.hidden {
+    display: none;
+  } */
+
+  /* Add more mobile-specific styles as needed */
+  #resizer {
+    display: none; /* Hide the resizer on mobile */
+  }
+
+  #sub-menu {
+    flex: 0 0 70%;
+    border-top: 1px solid var(--color-white);
+  }
+
+  .sub-menu-content img {
+    border: 1px solid var(--color-white);
+  }
+
+  #sub-menu-text {
+    padding-top: 18px; /* Adjusted for the header height */
+  }
+  
+  #background-container {
+    flex-direction: column-reverse;
+  }
+
+  .sub-menu-content img {
+    max-width: 100%;
+  }
 }
