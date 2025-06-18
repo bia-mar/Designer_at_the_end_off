@@ -126,6 +126,8 @@ fetch('menuItems.json')
         if (lastActiveLink === link) {
           const isHidden = subMenu.classList.toggle('hidden');
           resizer.classList.toggle('hidden', isHidden);
+          subMenu.classList.toggle('visible', !isHidden);
+          resizer.classList.toggle('visible', !isHidden);
           menu.classList.remove('active');
           if (isHidden) {
             lastActiveLink = null;
@@ -134,6 +136,8 @@ fetch('menuItems.json')
         } else {
           subMenu.classList.remove('hidden');
           resizer.classList.remove('hidden');
+          subMenu.classList.add('visible');
+          resizer.classList.add('visible');
         }
 
         // Update content if opening or switching links
@@ -174,12 +178,16 @@ fetch('menuItems.json')
 
 
 
+// Make these variables global so they can be accessed by other functions
+let images = [];
+let placedImages = [];
+let imageCenters = [];
 function loadImagesAndInit() {
-  const images = [];
+  images = [];
   let loadedImages = 0;
-  let placedImages = [];
+  placedImages = [];
   let canvasCenter = { x: canvas.width / 2, y: canvas.height / 2 };
-  let imageCenters = [];
+  imageCenters = [];
 
   // Set both canvases to fill the screen
   canvas.width = window.innerWidth;
@@ -524,9 +532,14 @@ function loadImagesAndInit() {
             const hoverText = document.getElementById('hoverText');
             menu.classList.remove('active');
             // When hiding the sub-menu:
-            subMenu.classList.add('hidden');
-            resizer.classList.add('hidden');
-            if (subMenu) subMenu.classList.add('hidden');
+            if (subMenu) {
+              subMenu.classList.remove('visible');
+              subMenu.classList.add('hidden');
+            }
+            if (resizer) {
+              resizer.classList.remove('visible');
+              resizer.classList.add('hidden');
+            }
             if (hoverImage) hoverImage.style.display = 'none';
             if (hoverText) hoverText.style.display = 'none';
           }
@@ -554,9 +567,9 @@ function loadImagesAndInit() {
 }
 
 // Reload only the canvas after 90 seconds (90000 milliseconds)
-setTimeout(function () {
-  if (typeof loadImagesAndInit === 'function') {
-    loadImagesAndInit();
+setInterval(function () {
+  if (typeof resetGlitchEffect === 'function') {
+    resetGlitchEffect();
   }
 }, 90000);
 
@@ -575,13 +588,20 @@ function simulateMenuClickByLabel(label, link) {
   // lastActiveLink is only used for menu highlighting, so keep it as a global variable if needed
   window.lastActiveLink = link;
 
+
+
   // Ensure sub-menu and resizer are visible (open them if hidden)
-  if (subMenu && subMenu.classList.contains('hidden')) {
+  if (subMenu) {
+    subMenu.classList.add('visible');
     subMenu.classList.remove('hidden');
   }
-  if (resizer && resizer.classList.contains('hidden')) {
+  if (resizer) {
+    resizer.classList.add('visible');
     resizer.classList.remove('hidden');
   }
+
+
+
 
   const item = menuItems.find(
     m => m.label && m.label.toUpperCase() === label
@@ -611,7 +631,12 @@ function simulateMenuClickByLabel(label, link) {
 
 // Close panels function
 function handleClosePanels(event) {
-  if (isResizing) return; // Don't close panels if resizing
+  console.log('handleClosePanels called', event);
+
+  if (isResizing) {
+    console.log('Skipping close panels because isResizing is true');
+    return; // Don't close panels if resizing
+  }
   const aboutBtn = document.getElementById('about-button');
   const aboutSection = document.getElementById('about');
   const menuToggle = document.getElementById('title');
@@ -622,6 +647,7 @@ function handleClosePanels(event) {
     !menu.contains(event.target) &&
     event.target !== menuToggle
   ) {
+    console.log('Closing menu panel');
     menu.classList.remove('active');
   }
   if (
@@ -629,18 +655,32 @@ function handleClosePanels(event) {
     !aboutSection.contains(event.target) &&
     event.target !== aboutBtn
   ) {
+    console.log('Closing about panel');
     aboutSection.classList.remove('active');
   }
   // Add for sub-menu if needed:
-  const subMenu = document.getElementById('sub-menu');
-  if (
-    subMenu && !subMenu.classList.contains('hidden') &&
-    !subMenu.contains(event.target)
-  ) {
-    // When hiding the sub-menu:
-    subMenu.classList.add('hidden');
-    resizer.classList.add('hidden');
+  //const subMenu = document.getElementById('sub-menu');
+  //if (
+  //  subMenu && !subMenu.classList.contains('hidden') &&
+  //  !subMenu.contains(event.target)
+  //) {
+  //  console.log('Closing sub-menu panel');
+  //  // When hiding the sub-menu:
+  //  subMenu.classList.add('hidden');
+  //  resizer.classList.add('hidden');
+  //}
+}
+
+// Reset the image canvas and glitch effect
+function resetGlitchEffect() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Redraw all images in their original positions
+  if (typeof placedImages !== 'undefined' && placedImages.length) {
+    placedImages.forEach(image => {
+      ctx.drawImage(image.img, image.x, image.y, image.width, image.height);
+    });
   }
+
 }
 
 document.addEventListener('click', handleClosePanels);
