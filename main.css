@@ -260,6 +260,7 @@ body {
   align-items: center;
   padding-right: 18px;
   padding-left: 18px;
+  border-right: 1px solid var(--color-white);
 }
 
 .sub-menu-content {
@@ -318,10 +319,9 @@ canvas {
 .resizer {
   flex-shrink: 0;
   z-index: 100;
-  width: 3px;
-  border: 1px solid var(--color-black);
+  width: 10px;
   height: 100%;
-  background: var(--color-white);
+  background: transparent;
   cursor: col-resize;
   user-select: none;
 }
@@ -333,7 +333,7 @@ canvas {
 h4 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .canvas-c {
@@ -342,15 +342,34 @@ h4 {
   height: 100%;
 }
 
-#authors {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  color: var(--color-light-grey);
-}
-
 #synopsis {
   margin-bottom: 10px;
 }
+
+
+#authors,
+.grey-this {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: var(--color-light-grey);
+  font-size: 14px !important;
+}
+
+
+#sub-menu,
+#resizer {
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+#sub-menu.visible,
+#resizer.visible {
+  transform: translateX(0);
+  pointer-events: auto;
+  pointer-events: auto;
+}
+
 
 @media (max-width: 600px) {
   /* Your mobile styles here */
@@ -391,6 +410,19 @@ h4 {
     display: none;
   } */
 
+  #sub-menu,
+  #resizer {
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    transform: translateY(100%);
+    pointer-events: none;
+  }
+
+  #sub-menu.visible,
+  #resizer.visible {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
   /* Add more mobile-specific styles as needed */
   #resizer {
     display: none; /* Hide the resizer on mobile */
@@ -399,6 +431,7 @@ h4 {
   #sub-menu {
     flex: 0 0 70%;
     border-top: 1px solid var(--color-white);
+    border-right: 0px solid var(--color-white);
   }
 
   .sub-menu-content img {
@@ -417,23 +450,4 @@ h4 {
     max-width: 100%;
   }
 
-}
-
-
-
-
-
-#sub-menu,
-#resizer {
-  opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  transition: opacity 0.3s, transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
-  pointer-events: none;
-}
-
-#sub-menu.visible,
-#resizer.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
 }
