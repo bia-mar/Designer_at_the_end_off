@@ -190,6 +190,7 @@ function loadImagesAndInit() {
   imageCenters = [];
 
   // Set both canvases to fill the screen
+  console.log(window.innerWidth, window.innerHeight);
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   circleCanvas.width = window.innerWidth;
@@ -226,7 +227,12 @@ function loadImagesAndInit() {
     imageCenters = [];
 
     images.forEach((img, index) => {
-      let perc = 0.25 + seededRandom() * 0.2;
+      let perc;
+      if (canvas.width <= 600) {
+        perc = 0.1 + seededRandom() * 0.05;
+      } else {
+        perc = 0.25 + seededRandom() * 0.2;
+      }
       let imageHeight = canvas.height * perc;
       let imageWidth = imageHeight * 0.70;
       let randomX, randomY, overlapCount;
@@ -658,17 +664,6 @@ function handleClosePanels(event) {
     console.log('Closing about panel');
     aboutSection.classList.remove('active');
   }
-  // Add for sub-menu if needed:
-  //const subMenu = document.getElementById('sub-menu');
-  //if (
-  //  subMenu && !subMenu.classList.contains('hidden') &&
-  //  !subMenu.contains(event.target)
-  //) {
-  //  console.log('Closing sub-menu panel');
-  //  // When hiding the sub-menu:
-  //  subMenu.classList.add('hidden');
-  //  resizer.classList.add('hidden');
-  //}
 }
 
 // Reset the image canvas and glitch effect
