@@ -180,7 +180,7 @@ ul.menu-list,
   pointer-events: none;
   height: 100%;
   width: 550px;
-  padding-top: 65px;
+  padding-top: 80px;
   padding-bottom: 50px;
   box-sizing: border-box;
   border-left: 1px solid var(--color-white);
@@ -255,7 +255,7 @@ body {
   z-index: 100;
   background-color: var(--color-black);
   overflow-x: hidden;
-  flex: 0 0 50%;
+  flex: 0 0 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,7 +299,7 @@ body {
   flex-direction: column;
   align-items: start;
   width: 100%;
-  padding-top: 65px;
+  padding-top: 80px;
 }
 
 #canvas-container {
@@ -351,7 +351,7 @@ h4 {
 #authors,
 .grey-this {
   margin-top: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   color: var(--color-light-grey);
   font-size: 14px !important;
 }
@@ -396,6 +396,7 @@ h4 {
     border-bottom: 1px solid var(--color-white);
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
     transform: translateY(-100%);
+    padding-top: 65px;
   }
 
   /* #sub-menu {
