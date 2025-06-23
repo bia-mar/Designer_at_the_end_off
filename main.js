@@ -664,6 +664,19 @@ function handleClosePanels(event) {
     console.log('Closing about panel');
     aboutSection.classList.remove('active');
   }
+  //const subMenu = document.getElementById('sub-menu');
+  //const resizer = document.getElementById('resizer');
+  //if (
+  //  subMenu && subMenu.classList.contains('visible') &&
+  //  !subMenu.contains(event.target)
+  //) {
+  //  subMenu.classList.remove('visible');
+  //  subMenu.classList.add('hidden');
+  //  if (resizer) {
+  //    resizer.classList.remove('visible');
+  //    resizer.classList.add('hidden');
+  //  }
+  //}
 }
 
 // Reset the image canvas and glitch effect
