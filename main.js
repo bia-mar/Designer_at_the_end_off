@@ -152,20 +152,22 @@ fetch('menuItems.json')
             if (Array.isArray(item.content)) {
               contentHtml += item.content.map(src =>
                 `<img src="${src}" alt="${item.label} content">`
-                //`<img src="${src}" alt="${item.label} content" style="max-width:100%;margin-bottom:8px;">`
               ).join('');
             } else {
               contentHtml += `<img src="${item.content}" alt="${item.label} content" >`;
-              //contentHtml += `<img src="${item.content}" alt="${item.label} content" style="max-width:100%;margin-bottom:8px;">`;
             }
           }
           if (item.poster) {
-            //contentHtml += `<img src="${item.poster}" alt="${item.label} poster" style="max-width:100%;margin-top:8px;">`;
             contentHtml += `<img src="${item.poster}" alt="${item.label} poster">`;
           }
           subMenuContent.innerHTML = contentHtml;
           subMenuText.querySelector('p#authors').textContent = item.authors || '';
         }
+        // Reset scroll to top when submenu opens
+        if (subMenu) subMenu.scrollTop = 0;
+        if (subMenuContent) subMenuContent.scrollTop = 0;
+        // Reset scroll to top when menu opens
+        if (menu) menu.scrollTop = 0;
         lastActiveLink = link;
         menu.classList.remove('active');
       });
@@ -630,6 +632,9 @@ function simulateMenuClickByLabel(label, link) {
       contentHtml += `<img src="${item.poster}" alt="${item.label} poster">`;
     }
     subMenuContent.innerHTML = contentHtml;
+    // Reset scroll to top when submenu opens
+    if (subMenu) subMenu.scrollTop = 0;
+    if (subMenuContent) subMenuContent.scrollTop = 0;
   }
   menu.classList.remove('active');
   // If this is called from a click/tap, make sure to stop propagation there as well if needed
@@ -690,6 +695,5 @@ function resetGlitchEffect() {
   }
 
 }
-
 document.addEventListener('click', handleClosePanels);
 document.addEventListener('touchstart', handleClosePanels);
