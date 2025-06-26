@@ -1,7 +1,7 @@
 [
   {
     "label": "BONDS",
-    "poster": "./posters/bonds.png",
+    "poster": "./posters/bonds.webp",
     "content": [
       "./content/Bonds/bonds_1.webp",
       "./content/Bonds/bonds_2.webp",
@@ -45,7 +45,7 @@
   },
   {
     "label": "CLIFF",
-    "poster": "./posters/cliff.png",
+    "poster": "./posters/cliff.webp",
     "content": [
       "./content/Cliff/CLIFF_01.webp",
       "./content/Cliff/CLIFF_02.webp",
@@ -87,7 +87,7 @@
   },
   {
     "label": "COMMUNITY",
-    "poster": "./posters/community.png",
+    "poster": "./posters/community.webp",
     "content": [
       "./content/Community/Community_1.webp",
       "./content/Community/Community_2.webp",
@@ -128,7 +128,7 @@
   },
   {
     "label": "COMPOSITION",
-    "poster": "./posters/composition.png",
+    "poster": "./posters/composition.webp",
     "content": [
       "./content/Composition/frame 1.webp",
       "./content/Composition/frame 2.webp",
@@ -209,7 +209,7 @@
   },
   {
     "label": "EGO",
-    "poster": "./posters/ego.png",
+    "poster": "./posters/ego.webp",
     "content": [
       "./content/Ego/Storyboard_Ego-01.webp",
       "./content/Ego/Storyboard_Ego-02.webp",
@@ -250,7 +250,7 @@
   },
   {
     "label": "THE END",
-    "poster": "./posters/end.png",
+    "poster": "./posters/end.webp",
     "content": [
       "./content/End/THE END_01.webp",
       "./content/End/THE END_02.webp",
@@ -337,7 +337,7 @@
   },
   {
     "label": "IMAGES",
-    "poster": "./posters/images.png",
+    "poster": "./posters/images.webp",
     "content": [
       "./content/Images/IMAGES_01.webp",
       "./content/Images/IMAGES_02.webp",
@@ -379,7 +379,7 @@
   },
   {
     "label": "INDIVIDUALITY",
-    "poster": "./posters/individuality.png",
+    "poster": "./posters/individuality.webp",
     "content": [
       "./content/Individuality/StoryBoard1.webp",
       "./content/Individuality/StoryBoard2.webp",
@@ -418,7 +418,7 @@
   },
   {
     "label": "MATTER",
-    "poster": "./posters/matter.png",
+    "poster": "./posters/matter.webp",
     "content": [
       "./content/Matter/MATTER_1.webp",
       "./content/Matter/MATTER_2.webp",
@@ -457,7 +457,7 @@
   },
   {
     "label": "NEVER ENDING PROJECTS",
-    "poster": "./posters/never-ending.png",
+    "poster": "./posters/never-ending.webp",
     "content": [
       "./content/NeverEnding/NeverEndingProjects_01.webp",
       "./content/NeverEnding/NeverEndingProjects_02.webp",
@@ -500,7 +500,7 @@
   },
   {
     "label": "NOVELTY",
-    "poster": "./posters/novelty.png",
+    "poster": "./posters/novelty.webp",
     "content": [
       "./content/Novelty/NOVELTY_0.webp",
       "./content/Novelty/NOVELTY_1.webp",
@@ -622,7 +622,7 @@
   },
   {
     "label": "STILLNESS",
-    "poster": "./posters/stillness.png",
+    "poster": "./posters/stillness.webp",
     "content": [
       "./content/Stillness/STILLNESS_01.webp",
       "./content/Stillness/STILLNESS_02.webp",
@@ -660,7 +660,7 @@
   },
   {
     "label": "SURVIVAL",
-    "poster": "./posters/survival.png",
+    "poster": "./posters/survival.webp",
     "content": [
       "./content/Survival/survival_01.webp",
       "./content/Survival/survival_02.webp",
@@ -698,7 +698,7 @@
   },
   {
     "label": "SYMBIOSIS",
-    "poster": "./posters/symbiosis.png",
+    "poster": "./posters/symbiosis.webp",
     "content": [
       "./content/Symbiosis/symbiosis-1.webp",
       "./content/Symbiosis/symbiosis-2.webp",
@@ -740,7 +740,7 @@
   },
   {
     "label": "TRICKERY",
-    "poster": "./posters/trickery.png",
+    "poster": "./posters/trickery.webp",
     "content": [
       "./content/Trickery/TRICKERY_1.webp",
       "./content/Trickery/TRICKERY_2.webp",
@@ -779,7 +779,7 @@
   },
   {
     "label": "THE UNCIVILIZED?",
-    "poster": "./posters/uncivilized.png",
+    "poster": "./posters/uncivilized.webp",
     "content": [
       "./content/Uncivilized/Uncivilized1.webp",
       "./content/Uncivilized/Uncivilized2.webp",
