@@ -90,14 +90,8 @@
     "poster": "./posters/community.webp",
     "content": [
       "./content/Community/Community_1.webp",
-      "./content/Community/Community_2.webp",
-      "./content/Community/Community_3.webp",
-      "./content/Community/Community_4.webp",
-      "./content/Community/Community_5.webp",
       "./content/Community/Community_6.webp",
       "./content/Community/Community_7.webp",
-      "./content/Community/Community_8.webp",
-      "./content/Community/Community_9.webp",
       "./content/Community/Community_10.webp",
       "./content/Community/Community_11.webp",
       "./content/Community/Community_12.webp",
@@ -115,13 +109,11 @@
       "./content/Community/Community_24.webp",
       "./content/Community/Community_25.webp",
       "./content/Community/Community_26.webp",
-      "./content/Community/Community_27.webp",
       "./content/Community/Community_28.webp",
       "./content/Community/Community_29.webp",
       "./content/Community/Community_30.webp",
       "./content/Community/Community_31.webp",
-      "./content/Community/Community_32.webp",
-      "./content/Community/Community_33.webp"
+      "./content/Community/Community_32.webp"
     ],
     "synopsis": "Numa vida urbana moderna, a cada segundo passamos por milhares pessoas, será que ainda existe comunidade? The Designer at the End of Community explora essa questão.",
     "authors": "by Duarte Reis, Gonçalo Amaral, Maria Mendes and Madalena Faro"
